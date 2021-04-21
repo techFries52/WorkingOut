@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 function Selection(props) {
-    const { selectedWorkouts, workoutDeselect} = props;    
+    const { selectedWorkouts} = props;    
     
     return (
         <div className="col-md-3">

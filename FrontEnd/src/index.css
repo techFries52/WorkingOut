@@ -35,11 +35,23 @@ h1 {
   font-weight: normal;
 }
 
-ul {
+.heightres {
+  max-height: 200px;
+}
+
+.eList {
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: 500px;
+  overflow:hidden;
+
 }
+
+.eList:hover {
+  overflow-y: scroll;
+}
+
 
 li {
   background-color: white;
@@ -74,7 +86,7 @@ li:hover .plus {
   opacity: 1.0;
 }
 
-.plus {
+.plusspan {
   background-color: #2980e9;
   height: 40px;
   margin-right: 20px;
@@ -86,6 +98,7 @@ li:hover .plus {
   opacity: 0;
 }
 
+
 .float-right {
   margin:0;
 }
@@ -93,6 +106,40 @@ li:hover .plus {
 .jumbotron {
   background-color: white;
 }
+
+input {
+  padding: 0px !important;
+  border: none;
+  margin: 0px;
+  height: 100%;
+  color: #2980B9;
+  width: 45px;
+}
+
+.repsLi {
+  background-color: #c120d6;  
+  width: 40px;
+  opacity: 1.0;
+  margin-right: 0px;
+}
+
+li:hover span .repsLi {
+  width: 30px;
+  opacity: 1.0;
+}
+
+.compLi {  
+  margin-right: 52px;
+  background-color: #20d62f;  
+  width: 40px;
+  opacity: 1.0;
+}
+
+.compSp {  
+  opacity: 1.0;
+  background-color: #20d62f;  
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
