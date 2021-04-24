@@ -1,9 +1,6 @@
 body {
   margin: 0;
-  background: #2980B9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%,  rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -35,15 +32,13 @@ h1 {
   font-weight: normal;
 }
 
-.heightres {
-  max-height: 200px;
-}
+
 
 .eList {
   list-style: none;
   margin: 0;
+  margin-bottom: 50px;
   padding: 0;
-  max-height: 500px;
   overflow:hidden;
 
 }
@@ -69,7 +64,7 @@ li:hover span {
   opacity: 1.0;
 }
 
-span {
+span .fa-trash {
   background-color: #e74c3c;
   height: 40px;
   margin-right: 20px;

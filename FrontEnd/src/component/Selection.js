@@ -1,45 +1,19 @@
 import React from 'react';
+import uuid from "react-uuid";
 
-function Selection(props) {
-    const { selectedWorkouts} = props;    
+const Selection = (props) => {
+    const { selectedWorkouts, workoutDeselect, workoutCompleted } = props;    
     
     return (
-        <div className="col-md-3">
-            <h1>Selection <i class="fa fa-plus"></i></h1>
-            <ul id="selectionList">
-            { selectedWorkouts.map(exercise => {
-                return <li key={exercise._id}>{exercise.title}<span onClick={() => this.workoutDeselect(exercise)} className="float-right"><i class="fa fa-trash"></i></span></li>
-            })}                   
-            </ul>
+        <div className="col-md-4">
+            <h1>Reps | Selection <i className="fa fa-plus"></i></h1>
+            <ul className="eList">
+                { selectedWorkouts.map(exercise => {
+                    return <li key={uuid()}><span className="repsLi">{exercise.reps}</span><span onClick={() => workoutCompleted(exercise)} className="compSp"><i className="fa fa-check"></i></span>{exercise.title}<span onClick={() => workoutDeselect(exercise)} className="float-right"><i className="fa fa-trash"></i></span></li>
+                })}                   
+            </ul>                
         </div>
     )
 }
 export default Selection;
 
-// export default class Selection extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             workouts: [],
-//             status: "not selected"
-//         };
-//       }
-    
-
-//     render() {
-//         return (
-//             <div className="col-md-4">
-//                 <h1>Selection <i class="fa fa-plus"></i></h1>
-//                 <ul id="selectionList">
-//                     <li><span onClick={this.handleChange} className="plus"><i class="fa fa-plus"></i></span>Flat Bench</li>     
-                                
-//                 </ul>
-//             </div>
-//         )
-//     }
-    
-// };
-
-//  selectedWorkouts.map( workouts => {
-//     return <li key={workouts._id}><span  className="plus"><i class="fa fa-plus"></i></span>{workouts.title}</li>
-// })

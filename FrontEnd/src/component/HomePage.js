@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
-import uuid from "react-uuid";
-import RepCounter from "./common/RepCounter";
+import Exercises from "./Exercises";
+import Selection from "./Selection";
+import { toast } from "react-toastify";
 
 
 export default class HomePage extends Component {
@@ -150,29 +150,16 @@ export default class HomePage extends Component {
             reps: "10x"
           }
         ],
-        selectedWorkouts: [],
-        completedWorkouts: []
+        selectedWorkouts: []
     };
   }
-
-  // componentDidMount = () => {
-  //   axios.get("/getworkouts").then(workouts => {
-  //       this.setState({workouts: workouts.data.workouts});
-  //   })
-  // };
 
   workoutSelect = (exercise) => {
     this.setState(prevState => ({
        selectedWorkouts: [...prevState.selectedWorkouts, exercise],
       
     }))
-  }
-
-  workoutCompleted = (exercise) => {
-    this.setState(prevState => ({
-      completedWorkouts: [...prevState.completedWorkouts, exercise]
-    }))
-  } 
+  }  
 
   workoutDeselect = (exercise) => {
     this.setState(state => {
@@ -185,53 +172,28 @@ export default class HomePage extends Component {
     })
   }
 
-  completedDeselect = (exercise) => {
+  workoutCompleted = (exercise) => {
     this.setState(state => {
-      const completedWorkouts = [...state.completedWorkouts];
-      completedWorkouts.splice(completedWorkouts.indexOf(exercise.title))
+      const selectedWorkouts = [...state.selectedWorkouts];      
+      toast.success("Exercise Completed!")
+      selectedWorkouts.splice(selectedWorkouts.indexOf(exercise.title))
       return ({
-        completedWorkouts
-      })
+        selectedWorkouts
+      });
       
     })
   }
 
-  
   render() {
-    const { workouts, selectedWorkouts, completedWorkouts } = this.state;
-    
-
-    
-
+    const { workouts, selectedWorkouts } = this.state;
+  
     return(
       <div>
         
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-4">
-                <h1>Exercises <i className="fa fa-plus"></i></h1>
-                <ul className="eList">
-                    { workouts.map( exercise => {
-                            return <li key={exercise._id}><span onClick={() => this.workoutSelect(exercise)}  className="plusspan"><i className="fa fa-plus"></i></span>{exercise.title}</li>
-                        })}      
-                </ul>
-            </div>
-            <div className="col-md-4">
-                <h1>Reps | Selection <i className="fa fa-plus"></i></h1>
-                <ul className="eList">
-                    { selectedWorkouts.map(exercise => {
-                        return <li key={uuid()}><span className="repsLi">{exercise.reps}</span><span onClick={() => this.workoutCompleted(exercise)} className="compSp"><i className="fa fa-check"></i></span>{exercise.title}<span onClick={() => this.workoutDeselect(exercise)} className="float-right"><i className="fa fa-trash"></i></span></li>
-                    })}                   
-                </ul>                
-            </div>
-            <div className="col-md-4">
-                <h1>Completed <i className="fa fa-plus"></i></h1>
-                <ul className="eList">
-                    { completedWorkouts.map(exercise => {
-                        return <li key={uuid()}><span className="compLi">{exercise.reps}</span>{exercise.title}<span onClick={() => this.completedDeselect(exercise)} className="float-right"><i className="fa fa-trash"></i></span></li>
-                    })}                   
-                </ul>                
-            </div>
+          <div className="row justify-content-center">
+            <Exercises workouts={workouts} workoutSelect={this.workoutSelect} />
+            <Selection selectedWorkouts={selectedWorkouts} workoutDeselect={this.workoutDeselect} workoutCompleted={this.workoutCompleted} />      
           </div>
         </div>
       </div>
