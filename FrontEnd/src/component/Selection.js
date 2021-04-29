@@ -2,7 +2,7 @@ import React from "react";
 import uuid from "react-uuid";
 
 const Selection = (props) => {
-  const { selectedWorkouts, workoutDeselect, workoutCompleted } = props;
+  const { selectedWorkouts, workoutDeselect } = props;
 
   return (
     <div className="col-md-4">
@@ -14,12 +14,7 @@ const Selection = (props) => {
           return (
             <li key={uuid()}>
               <span className="repsLi">{exercise.reps}</span>
-              <span
-                onClick={() => workoutCompleted(exercise)}
-                className="compLi"
-              >
-                <i className="fa fa-check"></i>
-              </span>
+              
               {exercise.title}
               <span
                 onClick={() => workoutDeselect(exercise)}
