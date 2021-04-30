@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Timer from "./Timer";
 import uuid from "react-uuid";
 
@@ -6,7 +6,7 @@ const WorkoutPage = (props) => {
     const { selectedWorkouts, workoutCompleted } = props;
     return(        
         <div className="container-fluid">
-            <div className="row">
+            <div className="row justify-content-center">
                 <Timer />
             </div>
             <div className="row justify-content-center">
