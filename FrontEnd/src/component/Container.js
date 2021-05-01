@@ -177,11 +177,7 @@ export default class Container extends Component {
     const removeIndex = this.state.selectedWorkouts.findIndex(
       (exercise) => exercise === currentExercise
     );
-    console.log(removeIndex);
     selectedWorkouts.splice(removeIndex, 1);
-    // const newSelectedWorkouts = this.state.selectedWorkouts.filter(
-    //   (item) => item.title !== exercise.title
-    // );
     toast.success("Exercise Completed!");
     this.setState({ selectedWorkouts: selectedWorkouts });
   };
