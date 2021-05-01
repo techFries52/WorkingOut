@@ -9,6 +9,11 @@ const HomePage = (props) => {
     return (
       <div>
         <div className="container-fluid">
+          <div className="row justify-content-center">              
+              <NavLink to="/workout">
+                <button className="btn btn-success bottom-margin">Start!</button>
+              </NavLink>
+          </div>
           <div className="row justify-content-center">
             <Exercises 
               workouts={workouts} 
@@ -20,11 +25,6 @@ const HomePage = (props) => {
               selectedWorkouts={selectedWorkouts}
               workoutDeselect={workoutDeselect}
             />            
-          </div>
-          <div className="row justify-content-center">              
-              <NavLink to="/workout">
-                <button className="btn btn-success bottom-margin">Start!</button>
-              </NavLink>
           </div>
         </div>
       </div>

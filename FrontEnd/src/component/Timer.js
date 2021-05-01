@@ -10,7 +10,7 @@ function MyStopwatch() {
     start,
     pause,
     reset,
-  } = useStopwatch({ autoStart: false });
+  } = useStopwatch({ autoStart: true });
 
 
   return (
