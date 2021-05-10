@@ -138,7 +138,7 @@ export default class Container extends Component {
           },
           {
             _id: "24",
-            title: "Straight Leg Deadligt",
+            title: "Straight Leg Deadlift",
             reps: "10x",
           },
           {
@@ -151,6 +151,11 @@ export default class Container extends Component {
             title: "Hanging Leg Raises",
             reps: "10x",
           },
+          {
+            _id: "27",
+            title: "Hip Thrust",
+            reps: "10x"
+          }
         ],          
           selectedWorkouts: [],
         };

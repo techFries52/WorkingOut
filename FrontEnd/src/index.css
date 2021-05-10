@@ -1,11 +1,7 @@
 body {
   margin: 0; 
   min-height: 100%; 
-  background-image: radial-gradient(
-    circle farthest-corner at 22.4% 21.7%,
-    rgba(4, 189, 228, 1) 0%,
-    rgba(2, 83, 185, 1) 100.2%
-  );
+  background-image: url("./assets/workoutbg.png");
   background-attachment: fixed;
   background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -16,7 +12,7 @@ body {
 }
 
 .btn-success {
-  background-color: rgb(117, 231, 2);
+  background-color: #0011ff;
 }
 
 .header {
@@ -29,12 +25,12 @@ body {
 }
 
 .fa-plus {
-  background-color: #2980e9;
+  background-color: #00da12;
   color: white;
 }
 
 h1 {
-  background-color: #2980e9;
+  background-color: #00da12;
   color: white;
   margin: 0;
   padding: 10px 20px;
@@ -44,6 +40,7 @@ h1 {
 }
 
 .eList {
+  opacity: 0.9;
   list-style: none;
   margin: 0;
   margin-bottom: 50px;
@@ -99,7 +96,7 @@ li:hover .plus {
 }
 
 .plusspan {
-  background-color: #2980e9;
+  background-color: #00da12;
   height: 40px;
   margin-right: 20px;
   text-align: center;
