@@ -6,6 +6,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+// Top Level Component stores State
+
+
 export default class Container extends Component {
     constructor(props) {
         super(props);
@@ -176,11 +180,11 @@ export default class Container extends Component {
         });
     };
 
-    workoutCompleted = (exercise) => {
+    workoutCompleted = (index) => {
         this.setState((state) => {
             const selectedWorkouts = [...state.selectedWorkouts];
             toast.success("Exercise Completed!");
-            selectedWorkouts.splice(selectedWorkouts.indexOf(exercise.title));
+            selectedWorkouts.splice(index, 1);
             return {
             selectedWorkouts,
             };

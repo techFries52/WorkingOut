@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
+// Header with Links
+
+
 function Header() {
-  const activeStyle = {color: "orange"};
+  const activeStyle = {color: "#00da12"};
   return (
     <div className="container-fluid">
       <div className="header">

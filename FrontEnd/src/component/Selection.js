@@ -3,7 +3,7 @@ import uuid from "react-uuid";
 
 const Selection = (props) => {
   const { selectedWorkouts, workoutDeselect } = props;
-
+// Watches state to add exercises to this list when selected
   return (
     <div className="col-md-4">
       <h1>
@@ -13,8 +13,7 @@ const Selection = (props) => {
         {selectedWorkouts.map((exercise) => {
           return (
             <li key={uuid()}>
-              <span className="repsLi">{exercise.reps}</span>
-              
+              <span className="repsLi">{exercise.reps}</span>              
               {exercise.title}
               <span
                 onClick={() => workoutDeselect(exercise)}

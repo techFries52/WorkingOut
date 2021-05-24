@@ -4,6 +4,7 @@ import uuid from "react-uuid";
 
 const WorkoutPage = (props) => {
   const { selectedWorkouts, workoutCompleted } = props;
+  // returns Timer component and chosen exercises and passes exercise completed function
   return (
     <div className="container-fluid">
       <div className="row justify-content-center">
@@ -15,12 +16,12 @@ const WorkoutPage = (props) => {
             Start <i className="fa fa-plus"></i>
           </h1>
           <ul className="eList">
-            {selectedWorkouts.map((exercise) => {
+            {selectedWorkouts.map((exercise, index) => {
               return (
                 <li key={uuid()}>
                   <span className="repsLi">{exercise.reps}</span>
                   <span
-                    onClick={() => workoutCompleted(exercise)}
+                    onClick={() => workoutCompleted(index)}
                     className="compLi"
                   >
                     <i className="fa fa-check"></i>
